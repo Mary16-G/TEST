@@ -14,5 +14,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    //return view('welcome');
+    return "vista de Bienvenida";
+});
+
+Route::get('/usuarios/{id}/{nombre?}', function($idusuario,$nombreusuario=null){
+    if($nombreusuario){
+        return "Hola Usuario" .$nombreusuario ."tu id es" .$idusuario;
+    }
+    else{
+        return "Hola tu id es:" .$idusuario;
+    }
 });
